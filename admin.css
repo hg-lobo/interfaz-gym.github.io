@@ -246,28 +246,29 @@ td {
 }
 
 /* ====== ESTILOS DEL MENÚ HAMBURGUESA ====== */
-/* Esconder el botón en desktop */
-#menu-btn {
+/* ====== ESTILOS DEL MENÚ HAMBURGUESA ====== */
+.menu-hamburger {
     display: none;
 }
 
 /* En móvil */
 @media (max-width: 768px) {
-    #menu-btn {
-        display: flex !important;
-        position: fixed;
-        top: 60px;
-        left: 10px;
-        z-index: 1001;
-        background: var(--purple-primary);
-        color: white;
-        padding: 10px 15px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    .menu-hamburger {
+        display: flex;
         align-items: center;
         justify-content: center;
+        background: transparent;
+        color: white;
+        font-size: 22px;
+        cursor: pointer;
+        margin-right: 10px;
+        padding: 5px 10px;
+        border-radius: 6px;
+        transition: 0.2s;
+    }
+    
+    .menu-hamburger:hover {
+        background-color: rgba(255,255,255,0.1);
     }
     
     /* Ocultar el sidebar en móvil por defecto */
@@ -297,5 +298,17 @@ td {
         bottom: 0;
         background: rgba(0,0,0,0.5);
         z-index: 999;
+    }
+    
+    /* Ajustar el selector de entorno para móvil */
+    #environment-selector {
+        justify-content: flex-start;
+        padding-left: 15px;
+        gap: 10px;
+    }
+    
+    .env-btn {
+        font-size: 12px;
+        padding: 4px 12px;
     }
 }
