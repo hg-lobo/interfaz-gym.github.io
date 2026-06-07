@@ -215,25 +215,6 @@ td {
 
 /* Responsive para móvil */
 @media (max-width: 768px) {
-    .sidebar {
-        width: 70px;
-    }
-    
-    .logo-area span, 
-    .menu-item span {
-        display: none;
-    }
-    
-    .logo-area {
-        justify-content: center;
-        padding: 24px 0;
-    }
-    
-    .menu-item {
-        justify-content: center;
-        padding: 14px 0;
-    }
-    
     .main-content {
         padding: 20px 15px;
     }
@@ -262,12 +243,15 @@ td {
     .chart-box {
         min-height: 280px;
     }
+}
 
-/* Esconder el botón en desktop, mostrar en móvil */
+/* ====== ESTILOS DEL MENÚ HAMBURGUESA ====== */
+/* Esconder el botón en desktop */
 #menu-btn {
     display: none;
 }
 
+/* En móvil */
 @media (max-width: 768px) {
     #menu-btn {
         display: block;
@@ -281,26 +265,21 @@ td {
         border-radius: 8px;
         cursor: pointer;
         font-size: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
     
     .sidebar {
         position: fixed;
         left: -260px;
         top: 50px;
+        width: 260px;
         height: calc(100vh - 50px);
         z-index: 999;
-        transition: 0.3s ease;
+        transition: left 0.3s ease;
         box-shadow: 2px 0 10px rgba(0,0,0,0.1);
     }
     
     #menu-toggle:checked ~ .environment-panel .sidebar {
         left: 0;
     }
-    
-    /* Ajustar el contenido cuando el menú está abierto */
-    .main-content {
-        margin-left: 0;
-    }
-}
-
 }
