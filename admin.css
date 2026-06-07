@@ -258,7 +258,7 @@ td {
         position: fixed;
         top: 60px;
         left: 10px;
-        z-index: 1000;
+        z-index: 1001;
         background: var(--purple-primary);
         color: white;
         padding: 10px 15px;
@@ -274,12 +274,12 @@ td {
         top: 50px;
         width: 260px;
         height: calc(100vh - 50px);
-        z-index: 999;
+        z-index: 1000;
         transition: left 0.3s ease;
         box-shadow: 2px 0 10px rgba(0,0,0,0.1);
     }
     
-    #menu-toggle:checked ~ .environment-panel .sidebar {
+    #menu-toggle:checked ~ #admin-environment .sidebar {
         left: 0;
     }
 }
