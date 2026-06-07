@@ -254,7 +254,7 @@ td {
 /* En móvil */
 @media (max-width: 768px) {
     #menu-btn {
-        display: block;
+        display: flex !important;
         position: fixed;
         top: 60px;
         left: 10px;
@@ -266,11 +266,14 @@ td {
         cursor: pointer;
         font-size: 20px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        align-items: center;
+        justify-content: center;
     }
     
-    .sidebar {
-        position: fixed;
-        left: -260px;
+    /* Ocultar el sidebar en móvil por defecto */
+    #admin-environment .sidebar {
+        position: fixed !important;
+        left: -260px !important;
         top: 50px;
         width: 260px;
         height: calc(100vh - 50px);
@@ -279,7 +282,20 @@ td {
         box-shadow: 2px 0 10px rgba(0,0,0,0.1);
     }
     
+    /* Cuando el checkbox está marcado, mostrar el sidebar */
     #menu-toggle:checked ~ #admin-environment .sidebar {
+        left: 0 !important;
+    }
+    
+    /* Overlay para cerrar al hacer clic fuera */
+    #menu-toggle:checked ~ #admin-environment::before {
+        content: "";
+        position: fixed;
+        top: 50px;
         left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
     }
 }
